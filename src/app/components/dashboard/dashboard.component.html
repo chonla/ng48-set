@@ -1,0 +1,39 @@
+<div class="top-bar">
+  <div class="container">
+    <img src="https://www.bnk48.com/static/img/logo-bnk48.png">
+  </div>
+</div>
+<div class="container mt-4">
+  <div class="row mb-2">
+    <div class="col-6">
+      <button [routerLink]="['/']" class="btn btn-primary">ดู</button>
+    </div>
+    <div class="col-6 text-right">
+      <button [routerLink]="['/form']" class="btn btn-success">เพิ่ม</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card pt-4 pb-4 pl-4 pr-4">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th class="text-center">ชื่อสมาชิก</th>
+              <th class="text-center">แก้ไข</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let member of members">
+              <td>
+                {{ member.name }}
+              </td>
+              <td class="text-center">
+                <a [routerLink]="['/edit', member._id ]">แก้ไข</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

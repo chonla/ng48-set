@@ -1,0 +1,28 @@
+body {
+  background-color: #ffe9e9;
+}
+
+// bootstrap color overrides
+.btn {
+  min-width: 8rem;
+}
+
+.btn-primary {
+  background-color: #c58ec3;
+  border-color: #c58ec3;
+
+  &:hover {
+    background-color: #fe8aa5;
+    border-color: #fe8aa5;
+  }
+}
+
+.btn-success {
+  background-color: #ff7c9b;
+  border-color: #ff7c9b;
+
+  &:hover {
+    background-color: #e06783;
+    border-color: #e06783;
+  }
+}
