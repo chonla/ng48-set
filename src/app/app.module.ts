@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { EditComponent } from './components/edit/edit.component';
 import { AuthGuard } from './guards/auth.guard';
+import { DotDotDotPipe } from './pipes/dot-dot-dot.pipe';
 
 const routes: Route[] = [
   {
@@ -57,7 +58,8 @@ const routes: Route[] = [
     BnkFormComponent,
     LoginComponent,
     DashboardComponent,
-    EditComponent
+    EditComponent,
+    DotDotDotPipe
   ],
   imports: [
     BrowserModule,

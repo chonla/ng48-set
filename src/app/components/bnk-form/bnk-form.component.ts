@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BnkService } from 'src/app/services/bnk.service';
+import { BnkService } from '../../services/bnk.service';
+import { UrlValidator } from '../../validators/url.validator';
 
 @Component({
   selector: 'app-bnk-form',
@@ -16,16 +17,22 @@ export class BnkFormComponent implements OnInit {
 
   ngOnInit() {
     this.bnkForm = this.fb.group({
-      'name': '',
-      'imgUrl': '',
-      'instagramId': ''
+      'name': ['', Validators.required],
+      'imgUrl': ['', [Validators.required, UrlValidator.url]],
+      'instagramId': ['', Validators.required]
     });
   }
 
   save() {
-    this.bnk.create(this.bnkForm.value).subscribe(() => {
-      this.router.navigate(['/dashboard']);
-    });
+    if (this.bnkForm.valid) {
+      this.bnk.create(this.bnkForm.value).subscribe(() => {
+        this.router.navigate(['/dashboard']);
+      });
+    } else {
+      console.log('error', this.bnkForm.controls['name'].errors);
+      console.log('error', this.bnkForm.controls['imgUrl'].errors);
+      alert('เฮ้ย');
+    }
   }
 
 }

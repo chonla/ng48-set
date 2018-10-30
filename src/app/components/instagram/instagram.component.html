@@ -17,7 +17,7 @@
         <div class="card mb-4">
           <img class="card-img-top" [src]="entry.thumbnail">
           <div class="card-body">
-              <p class="card-text">{{ entry.title }}</p>
+              <p class="card-text">{{ entry.title | dotDotDot: 100 }}</p>
           </div>
         </div>
       </div>
