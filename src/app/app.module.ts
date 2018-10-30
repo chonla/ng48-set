@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { EditComponent } from './components/edit/edit.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Route[] = [
   {
@@ -29,7 +30,8 @@ const routes: Route[] = [
   },
   {
     'path': 'form',
-    'component': BnkFormComponent
+    'component': BnkFormComponent,
+    'canActivate': [AuthGuard]
   },
   {
     'path': 'login',
@@ -37,11 +39,13 @@ const routes: Route[] = [
   },
   {
     'path': 'dashboard',
-    'component': DashboardComponent
+    'component': DashboardComponent,
+    'canActivate': [AuthGuard]
   },
   {
     'path': 'edit/:id',
-    'component': EditComponent
+    'component': EditComponent,
+    'canActivate': [AuthGuard]
   }
 ];
 

@@ -26,4 +26,8 @@ export class AuthService {
   getToken(): string {
     return this.token;
   }
+
+  isLogin(): boolean {
+    return (this.token !== '');
+  }
 }
