@@ -16,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { DotDotDotPipe } from './pipes/dot-dot-dot.pipe';
 import { MemberInfoComponent } from './components/member-info/member-info.component';
 import { VoterComponent } from './components/voter/voter.component';
+import { ShowPasswordDirective } from './directives/show-password.directive';
 
 const routes: Route[] = [
   {
@@ -63,7 +64,8 @@ const routes: Route[] = [
     EditComponent,
     DotDotDotPipe,
     MemberInfoComponent,
-    VoterComponent
+    VoterComponent,
+    ShowPasswordDirective
   ],
   imports: [
     BrowserModule,
