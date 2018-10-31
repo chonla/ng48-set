@@ -14,6 +14,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { EditComponent } from './components/edit/edit.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DotDotDotPipe } from './pipes/dot-dot-dot.pipe';
+import { MemberInfoComponent } from './components/member-info/member-info.component';
+import { VoterComponent } from './components/voter/voter.component';
 
 const routes: Route[] = [
   {
@@ -59,7 +61,9 @@ const routes: Route[] = [
     LoginComponent,
     DashboardComponent,
     EditComponent,
-    DotDotDotPipe
+    DotDotDotPipe,
+    MemberInfoComponent,
+    VoterComponent
   ],
   imports: [
     BrowserModule,

@@ -6,12 +6,7 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-4" *ngFor="let member of members">
-      <div class="card mb-4 bnk-card" [routerLink]="['/instagram', member.instagramId]">
-        <img class="card-img-top" [src]="member.imgUrl">
-        <div class="card-body">
-            <h5 class="card-title">{{ member.name }}</h5>
-        </div>
-      </div>
+      <app-member-info [member]="member"></app-member-info>
     </div>
   </div>
 </div>

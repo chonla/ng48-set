@@ -1,0 +1,10 @@
+<div class="card mb-4 bnk-card">
+  <img class="card-img-top" [src]="member.imgUrl" [routerLink]="['/instagram', member.instagramId]">
+  <div class="card-body" [routerLink]="['/instagram', member.instagramId]">
+    <h5 class="card-title">{{ member.name }}</h5>
+    <p class="card-text">คะแนน: {{ vote }}</p>
+  </div>
+  <div class="card-footer">
+    <app-voter (voteChanges)="updateVote($event)"></app-voter>
+  </div>
+</div>
